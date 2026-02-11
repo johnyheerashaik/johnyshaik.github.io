@@ -6,30 +6,35 @@
   <title>Johny Heera Shaik | Senior React Native & Backend Developer</title>
 
   <meta
-    name="Description"
-    content="Senior React Native & Backend Developer with 7+ years of experience building enterprise mobile applications for Walmart, GM, and T-Mobile. Builder of MyApp (AI Movie Companion) and WebBot (AI Code Editor + VS Code Extension) using LangChain + OpenAI."
+    name="description"
+    content="Senior React Native & Backend Developer with 7+ years of experience building enterprise mobile applications for Walmart, GM, and T-Mobile. Builder of MyApp (AI Movie Companion) and WebBot (AI Code Editor + VS Code Extension)."
   />
 
-  <!-- Optional: clean, premium font (safe to remove if you want system-only) -->
+  <!-- Optional: premium font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg: #f6f4ef;         /* warm off-white */
-      --bg2:#efece7;         /* subtle variation */
-      --card:#ffffff;        /* clean card */
-      --border: rgba(0,0,0,.07);
-      --border2: rgba(0,0,0,.10);
-      --text:#111318;
-      --muted: rgba(17,19,24,.68);
-      --muted2: rgba(17,19,24,.52);
-      --accent:#2b5cff;      /* subtle professional blue */
-      --ok:#1e7b44;
+      /* Warm, Claude-like minimal palette (NO BLUE GLOWS) */
+      --bg: #f6f4ef;
+      --bg2:#f1eee8;
+      --card:#ffffff;
+      --text:#141414;
+      --muted: rgba(20,20,20,.68);
+      --muted2: rgba(20,20,20,.52);
 
-      --shadow: 0 10px 30px rgba(17,19,24,.06);
-      --shadow2: 0 6px 18px rgba(17,19,24,.05);
+      --border: rgba(20,20,20,.08);
+      --border2: rgba(20,20,20,.12);
+
+      /* Accent is neutral (not blue) */
+      --accent: #141414;     /* primary button */
+      --accentText: #ffffff;
+
+      --shadow: 0 10px 28px rgba(20,20,20,.06);
+      --shadow2: 0 6px 18px rgba(20,20,20,.05);
+
       --r: 18px;
       --r2: 14px;
       --max: 1120px;
@@ -41,10 +46,7 @@
       margin:0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color: var(--text);
-      background:
-        radial-gradient(900px 520px at 18% 0%, rgba(43,92,255,.08), transparent 60%),
-        radial-gradient(800px 520px at 88% 12%, rgba(0,0,0,.04), transparent 55%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
+      background: linear-gradient(180deg, var(--bg), var(--bg2));
       min-height:100vh;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -58,7 +60,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(246,244,239,.82);
+      background: rgba(246,244,239,.86);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
@@ -77,8 +79,9 @@
     .avatar{
       width: 38px; height: 38px;
       border-radius: 14px;
-      background: linear-gradient(135deg, rgba(43,92,255,.95), rgba(86,226,255,.80));
-      box-shadow: 0 12px 24px rgba(43,92,255,.12);
+      background: #e9e5de;         /* NO gradient */
+      border: 1px solid var(--border);
+      box-shadow: none;            /* NO glow */
     }
     .brand b{ font-size: 13.5px; letter-spacing: .2px; }
     .brand span{ display:block; font-size: 12px; color: var(--muted2); margin-top: 2px; }
@@ -93,8 +96,8 @@
     }
     nav a:hover{
       color: var(--text);
-      background: rgba(0,0,0,.03);
-      border-color: rgba(0,0,0,.04);
+      background: rgba(20,20,20,.03);
+      border-color: rgba(20,20,20,.05);
     }
 
     /* Buttons */
@@ -104,7 +107,7 @@
       gap:8px;
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(0,0,0,.03);
+      background: rgba(20,20,20,.03);
       border: 1px solid var(--border);
       font-weight: 600;
       font-size: 13px;
@@ -113,18 +116,19 @@
     }
     .btn:hover{
       transform: translateY(-1px);
-      background: rgba(0,0,0,.04);
-      border-color: rgba(0,0,0,.10);
+      background: rgba(20,20,20,.04);
+      border-color: rgba(20,20,20,.12);
     }
+
     .btnPrimary{
       background: var(--accent);
-      color: white;
-      border: none;
-      box-shadow: 0 10px 20px rgba(43,92,255,.18);
+      color: var(--accentText);
+      border: 1px solid rgba(20,20,20,.18);
+      box-shadow: none;
     }
     .btnPrimary:hover{
       transform: translateY(-1px);
-      filter: brightness(.97);
+      filter: brightness(.96);
     }
 
     /* Layout */
@@ -144,10 +148,6 @@
       padding: 22px;
       box-shadow: var(--shadow);
     }
-    .soft{
-      background: rgba(255,255,255,.75);
-      box-shadow: var(--shadow2);
-    }
 
     /* Hero text */
     .pill{
@@ -156,13 +156,18 @@
       gap:10px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(0,0,0,.03);
+      background: rgba(20,20,20,.03);
       border: 1px solid var(--border);
       font-size: 12px;
       font-weight: 600;
       color: var(--muted);
     }
-    .dot{ width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px rgba(30,123,68,.12); }
+    .dot{
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #2e7d32; /* small green dot only */
+      box-shadow: 0 0 0 4px rgba(46,125,50,.10);
+    }
 
     h1{
       margin: 14px 0 12px;
@@ -184,26 +189,21 @@
     .chip{
       padding: 7px 11px;
       border-radius: 999px;
-      background: rgba(0,0,0,.03);
+      background: rgba(20,20,20,.03);
       border: 1px solid var(--border);
       font-size: 12px;
       font-weight: 600;
-      color: rgba(17,19,24,.78);
+      color: rgba(20,20,20,.78);
     }
+
     .ctaRow{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 16px; }
 
-    /* Sections */
     section{ margin-top: 16px; }
-    h2{
-      font-size: 15px;
-      margin: 0;
-      letter-spacing: .2px;
-    }
+    h2{ font-size: 15px; margin: 0; letter-spacing: .2px; }
     .muted{ color: var(--muted2); font-size: 12px; margin: 6px 0 0; }
 
-    /* Items */
     .item{
-      background: rgba(0,0,0,.015);
+      background: rgba(20,20,20,.015);
       border: 1px solid var(--border);
       border-radius: var(--r2);
       padding: 16px;
@@ -224,18 +224,16 @@
       line-height: 1.7;
     }
 
-    /* Projects tags */
     .tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px; }
     .tag{
       padding: 6px 10px;
       border-radius: 999px;
-      background: rgba(0,0,0,.03);
+      background: rgba(20,20,20,.03);
       border: 1px solid var(--border);
       font-size: 12px;
-      color: rgba(17,19,24,.72);
+      color: rgba(20,20,20,.72);
     }
 
-    /* Two-column contact */
     .contact{
       display:grid;
       grid-template-columns: 1.2fr .8fr;
@@ -252,11 +250,10 @@
       color: var(--muted2);
     }
 
-    /* Small polish */
     .kpi{
       margin-top: 12px;
       padding-top: 12px;
-      border-top: 1px solid rgba(0,0,0,.06);
+      border-top: 1px solid rgba(20,20,20,.06);
       display:grid;
       grid-template-columns: repeat(2, minmax(0,1fr));
       gap: 10px;
@@ -264,8 +261,8 @@
     @media(max-width:520px){ .kpi{ grid-template-columns: 1fr; } }
 
     .kpiBox{
-      border: 1px solid rgba(0,0,0,.06);
-      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(20,20,20,.06);
+      background: rgba(255,255,255,.9);
       border-radius: 14px;
       padding: 12px;
     }
@@ -302,7 +299,7 @@
     <div class="card">
       <div class="pill"><span class="dot"></span> Open to Senior Mobile roles</div>
 
-      <h1>Building stable, high-performance React Native apps — and AI developer tools.</h1>
+      <h1>Building stable, high-performance React Native and Web Applications.</h1>
 
       <p class="sub">
         Senior React Native & Backend Developer with <b>7+ years</b> of experience delivering
@@ -340,7 +337,7 @@
       </div>
     </div>
 
-    <div class="card soft">
+    <div class="card">
       <h2>Highlights</h2>
       <ul>
         <li>Reduced crash rates by <b>~20%</b> using Firebase Crashlytics + Performance monitoring</li>
@@ -397,20 +394,19 @@
     </div>
 
     <div class="item">
-  <div class="itemTop">
-    <b>React Developer — Cintrox LLC</b>
-    <span class="muted">May 2018 – Sept 2018</span>
-  </div>
-  <ul>
-    <li>Implemented presentation layer using React.js, HTML5, and CSS3, replacing legacy frameworks with modern component-based architecture</li>
-    <li>Developed reusable React components with callback-driven logic and dynamic data rendering</li>
-    <li>Handled AJAX JSON responses and integrated backend data into interactive UI views</li>
-    <li>Built custom form validation logic using JavaScript and React state management</li>
-    <li>Ensured ADA accessibility compliance and responsive behavior across devices</li>
-    <li>Worked within Agile sprints to troubleshoot issues and deliver enhancements under tight deadlines</li>
-  </ul>
-</div>
-
+      <div class="itemTop">
+        <b>React Developer — Cintrox LLC</b>
+        <span class="muted">May 2018 – Sept 2018</span>
+      </div>
+      <ul>
+        <li>Implemented presentation layer using React.js, HTML5, and CSS3, replacing legacy frameworks with modern component-based architecture</li>
+        <li>Developed reusable React components with callback-driven logic and dynamic data rendering</li>
+        <li>Handled AJAX JSON responses and integrated backend data into interactive UI views</li>
+        <li>Built custom form validation logic using JavaScript and React state management</li>
+        <li>Ensured ADA accessibility compliance and responsive behavior across devices</li>
+        <li>Worked within Agile sprints to troubleshoot issues and deliver enhancements under tight deadlines</li>
+      </ul>
+    </div>
   </section>
 
   <!-- PROJECTS -->
@@ -418,18 +414,15 @@
     <h2>Projects</h2>
     <p class="muted">Public / personal work</p>
 
-    <!-- MyApp -->
     <div class="item">
       <div class="itemTop">
         <b>MyApp — AI-Powered Movie Companion</b>
         <span class="muted">React Native • OpenAI • TMDB</span>
       </div>
-
       <p class="sub" style="margin-top:10px">
         A cross-platform AI movie companion that provides personalized recommendations using OpenAI + TMDB,
         backed by Node/Express services and a theatre finder powered by GPS + Google Places.
       </p>
-
       <div class="tags">
         <span class="tag">React Native</span>
         <span class="tag">TypeScript</span>
@@ -439,70 +432,58 @@
         <span class="tag">Node/Express</span>
         <span class="tag">Render</span>
       </div>
-
       <div class="ctaRow">
         <a class="btn btnPrimary" href="https://github.com/johnyheerashaik/MyApp" target="_blank" rel="noopener">View Repo</a>
       </div>
     </div>
 
-    <!-- WebBot App -->
     <div class="item">
       <div class="itemTop">
         <b>WebBot — AI Code Editor / Assistant (Web App)</b>
         <span class="muted">React • Express • LangChain • OpenAI</span>
       </div>
-
       <p class="sub" style="margin-top:10px">
         An AI coding assistant web app that can analyze a codebase, perform file operations (read/write/replace),
         search across the workspace, run lint/build checks, and execute controlled shell commands — with real-time streaming responses.
       </p>
-
       <ul>
         <li>Implemented tool-calling workflows for safe file editing and workspace discovery (surgical edits)</li>
         <li>Built streaming chat UX using <b>Server-Sent Events (SSE)</b> for low-latency responses</li>
         <li>Added schema validation (<b>Zod</b>) and structured prompts for more reliable agent behavior</li>
       </ul>
-
       <div class="tags">
         <span class="tag">React 19</span>
         <span class="tag">TypeScript</span>
         <span class="tag">Vite</span>
         <span class="tag">Express 5</span>
         <span class="tag">LangChain</span>
-        <span class="tag">GPT-4o-mini</span>
         <span class="tag">SSE</span>
         <span class="tag">Zod</span>
       </div>
-
       <div class="ctaRow">
         <a class="btn btnPrimary" href="https://github.com/johnyheerashaik/my-app" target="_blank" rel="noopener">View Repo</a>
       </div>
     </div>
 
-    <!-- VS Code Extension -->
     <div class="item">
       <div class="itemTop">
         <b>WebBot — VS Code Extension</b>
         <span class="muted">VS Code • TypeScript • Developer Tooling</span>
       </div>
-
       <p class="sub" style="margin-top:10px">
         A VS Code extension that brings WebBot’s AI assistance into the editor workflow for faster coding,
         refactors, and developer productivity.
       </p>
-
       <div class="tags">
         <span class="tag">VS Code Extension</span>
         <span class="tag">TypeScript</span>
         <span class="tag">AI Coding</span>
         <span class="tag">Developer Tooling</span>
       </div>
-
       <div class="ctaRow">
         <a class="btn btnPrimary" href="https://github.com/johnyheerashaik/webbot-vscode-extension" target="_blank" rel="noopener">View Repo</a>
       </div>
     </div>
-
   </section>
 
   <!-- SKILLS -->
@@ -510,7 +491,7 @@
     <h2>Skills</h2>
     <ul>
       <li><b>Mobile:</b> React Native, React, TypeScript, Redux-Saga, Redux Toolkit, React Navigation, Hooks</li>
-      <li><b>AI/LLM:</b> LangChain, OpenAI (GPT-4o / GPT-4o-mini), Tool Calling, Prompt Engineering, Streaming (SSE)</li>
+      <li><b>AI/LLM:</b> LangChain, OpenAI, Tool Calling, Prompt Engineering, Streaming (SSE)</li>
       <li><b>Backend:</b> Node.js, Express, Java 11/17/21, Spring Boot 2.x/3.x, REST, GraphQL</li>
       <li><b>Monitoring:</b> Firebase Crashlytics, Performance, Analytics, Quantum Metric</li>
       <li><b>DevOps:</b> Jenkins, Docker, Firebase App Distribution</li>
