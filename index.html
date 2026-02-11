@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Johny Heera Shaik | Senior React Native & Backend Developer</title>
 
-  <meta name="description"
-        content="Senior React Native & Backend Developer with 7+ years of experience building enterprise mobile applications for Walmart, GM, and T-Mobile." />
+  <meta
+    name="description"
+    content="Senior React Native & Backend Developer with 7+ years of experience building enterprise mobile applications for Walmart, GM, and T-Mobile. Builder of MyApp (AI Movie Companion) and WebBot (AI Code Editor + VS Code Extension) using LangChain + OpenAI."
+  />
 
   <style>
     :root {
@@ -88,7 +90,7 @@
     .card{
       background:var(--card);
       border:1px solid var(--border);
-      border-radius:var(--r);
+      border-radius:18px;
       padding:18px;
       box-shadow:var(--shadow);
     }
@@ -102,7 +104,8 @@
     .sub{
       color:var(--muted);
       font-size:15px;line-height:1.6;
-      max-width:70ch;
+      max-width:72ch;
+      margin:0;
     }
 
     .pill{
@@ -123,19 +126,9 @@
       font-size:12px;font-weight:700;
     }
 
-    /* SECTIONS */
     section{margin-top:18px}
     h2{font-size:16px;margin:0}
-    .muted{color:var(--muted2);font-size:12px}
-
-    .grid{
-      display:grid;grid-template-columns:repeat(12,1fr);gap:16px;
-      margin-top:16px;
-    }
-    .col12{grid-column:span 12}
-    .col8{grid-column:span 8}
-    .col4{grid-column:span 4}
-    @media(max-width:900px){.col8,.col4{grid-column:span 12}}
+    .muted{color:var(--muted2);font-size:12px;margin:6px 0 0}
 
     .item{
       background:rgba(255,255,255,.05);
@@ -144,6 +137,7 @@
     }
     .itemTop{
       display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      align-items:baseline;
     }
     .itemTop b{font-size:14px}
     ul{
@@ -151,7 +145,6 @@
       color:var(--muted);font-size:13px;line-height:1.65;
     }
 
-    /* PROJECTS */
     .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
     .tag{
       padding:6px 10px;border-radius:999px;
@@ -160,9 +153,11 @@
       font-size:12px;
     }
 
-    /* CONTACT */
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
     .contact{
       display:grid;grid-template-columns:1.2fr .8fr;gap:16px;
+      margin-top:12px;
     }
     @media(max-width:800px){.contact{grid-template-columns:1fr}}
 
@@ -200,12 +195,13 @@
     <div class="card">
       <div class="pill"><span class="dot"></span> Open to Senior Mobile roles</div>
 
-      <h1>Building stable, high-performance React Native apps at enterprise scale.</h1>
+      <h1>Building stable, high-performance React Native apps — and AI developer tools.</h1>
 
       <p class="sub">
         Senior React Native & Backend Developer with <b>7+ years</b> of experience delivering
         enterprise mobile applications for <b>Walmart</b>, <b>General Motors</b>, and <b>T-Mobile</b>.
-        Strong focus on performance, clean architecture, observability, and scalable backend integration.
+        I focus on performance, clean architecture, observability, and scalable backend integration.
+        I also build <b>LLM-powered apps</b>, including an AI Movie Companion and an <b>AI Code Editor + VS Code Extension</b>.
       </p>
 
       <div class="chips">
@@ -213,122 +209,195 @@
         <span class="chip">TypeScript</span>
         <span class="chip">Redux-Saga</span>
         <span class="chip">Firebase</span>
+        <span class="chip">LangChain</span>
+        <span class="chip">OpenAI</span>
+        <span class="chip">Node/Express</span>
         <span class="chip">Java</span>
         <span class="chip">Spring Boot</span>
       </div>
 
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <div class="ctaRow">
         <a class="btn btnPrimary" href="mailto:johnyheera.sk@gmail.com">Email</a>
-        <a class="btn" href="https://github.com/johnyheerashaik" target="_blank">GitHub</a>
+        <a class="btn" href="https://github.com/johnyheerashaik" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
 
     <div class="card">
       <h2>Highlights</h2>
       <ul>
-        <li>Converted <b>100+ React Native class components</b> to functional components & hooks</li>
-        <li>Reduced mobile app crash rate by <b>~30%</b> using Firebase Crashlytics & Performance</li>
-        <li>Designed unified Axios network layers with interceptors & centralized error handling</li>
-        <li>Led backend modernization: Java 11 → 17/21, Spring Boot 2.x → 3.x</li>
+        <li>Reduced crash rates by <b>~20%</b> using Firebase Crashlytics + Performance monitoring</li>
+        <li>Modernized React Native UI by migrating legacy class components to hooks-based components</li>
+        <li>Designed unified Axios network layer with interceptors and centralized error handling</li>
+        <li>Built <b>My WebBot</b>: an <b>AI Code Editor/Assistant</b> + <b>VS Code Extension</b> using <b>LangChain + OpenAI</b></li>
       </ul>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience" class="card col12">
+  <section id="experience" class="card">
     <h2>Experience</h2>
 
     <div class="item">
       <div class="itemTop">
-        <b>Senior React Native Developer — Walmart</b>
+        <b>Senior React Native / Full-Stack Developer — Walmart</b>
         <span class="muted">Apr 2024 – Present</span>
       </div>
       <ul>
-        <li>Built high-performance React Native apps using TypeScript, Redux-Saga, and custom hooks</li>
-        <li>Integrated Firebase Crashlytics, Performance, Analytics, and Quantum Metric</li>
-        <li>Improved app stability and reduced crashes by ~30%</li>
-        <li>Optimized network architecture using Axios interceptors</li>
-        <li>Migrated backend services from Azure → Walmart Cloud</li>
-        <li>Upgraded Java services and Spring Boot applications</li>
+        <li>Built and maintained high-performance React Native apps using TypeScript, Redux-Saga, React Navigation, and custom hooks</li>
+        <li>Integrated Firebase Crashlytics, Performance Monitoring, Analytics, and Quantum Metric for real-time diagnostics and KPI tracking</li>
+        <li>Improved app stability by reducing crash rates by <b>~20%</b> across critical user flows</li>
+        <li>Optimized network architecture using Axios interceptors for unified error handling, token refresh logic, logging, and API observability</li>
+        <li>Managed React Native upgrades, resolving native module conflicts and third-party dependency compatibility issues</li>
+        <li>Contributed to backend cloud modernization (Azure → Walmart Cloud/OneOps) through validation, configuration alignment, and deployment support</li>
+        <li>Supported Java/Spring upgrades by assisting with dependency updates and post-deploy verification</li>
       </ul>
     </div>
 
     <div class="item">
       <div class="itemTop">
-        <b>React Native Developer — General Motors</b>
+        <b>Senior React Native Developer — General Motors</b>
         <span class="muted">Jan 2020 – Apr 2024</span>
       </div>
       <ul>
-        <li>Developed scalable React Native applications using Redux-Saga</li>
-        <li>Built EV features including Pre-Start Climate Control</li>
-        <li>Developed native Android modules for OBD-II communication</li>
-        <li>Integrated Firebase logging and Instabug for diagnostics</li>
+        <li>Developed scalable React Native applications using TypeScript and Redux-Saga for predictable state management</li>
+        <li>Contributed to EV features including Pre-Start Climate Control and remote vehicle monitoring</li>
+        <li>Developed native Android modules (Kotlin/Java) for OBD-II communication and diagnostics</li>
+        <li>Implemented Bluetooth/serial communication layers and integrated Firebase logging + Instabug for diagnostics</li>
       </ul>
     </div>
 
     <div class="item">
       <div class="itemTop">
-        <b>React Developer — T-Mobile</b>
+        <b>React / Mobile Developer — T-Mobile</b>
         <span class="muted">Oct 2018 – Dec 2019</span>
       </div>
       <ul>
         <li>Built internal dashboards using React, Redux, and REST APIs</li>
-        <li>Converted apps to Single Page Applications (SPA)</li>
+        <li>Converted apps to Single Page Applications (SPA) with React Router for faster navigation</li>
+        <li>Integrated Sentry for error tracking and performance monitoring</li>
       </ul>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="card col12">
+  <section id="projects" class="card">
     <h2>Projects</h2>
     <p class="muted">Public / personal work</p>
 
+    <!-- MyApp -->
     <div class="item">
-      <b>MyApp — Personal React Native Project</b>
-      <p class="muted">
-        React Native • TypeScript • Navigation • API Integration
-      </p>
-      <p class="sub">
-        A production-style React Native application demonstrating clean architecture,
-        hooks-based components, scalable navigation patterns, and API integration with
-        unified error handling.
+      <div class="itemTop">
+        <b>MyApp — AI-Powered Movie Companion</b>
+        <span class="muted">React Native • OpenAI • TMDB</span>
+      </div>
+
+      <p class="sub" style="margin-top:10px">
+        A cross-platform AI movie companion that provides personalized recommendations using OpenAI + TMDB,
+        backed by Node/Express services and a theatre finder powered by GPS + Google Places.
       </p>
 
       <div class="tags">
         <span class="tag">React Native</span>
         <span class="tag">TypeScript</span>
-        <span class="tag">Axios</span>
-        <span class="tag">Clean Architecture</span>
+        <span class="tag">OpenAI</span>
+        <span class="tag">TMDB</span>
+        <span class="tag">Google Places</span>
+        <span class="tag">Node/Express</span>
+        <span class="tag">Render</span>
       </div>
 
-      <div style="margin-top:10px">
-        <a class="btn btnPrimary" href="https://github.com/johnyheerashaik/MyApp" target="_blank">
-          View Code
+      <div class="ctaRow">
+        <a class="btn btnPrimary" href="https://github.com/johnyheerashaik/MyApp" target="_blank" rel="noopener">
+          View Repo
         </a>
       </div>
     </div>
+
+    <!-- WebBot App -->
+    <div class="item">
+      <div class="itemTop">
+        <b>My WebBot — AI Code Editor / Assistant (Web App)</b>
+        <span class="muted">React • Express • LangChain • OpenAI</span>
+      </div>
+
+      <p class="sub" style="margin-top:10px">
+        An AI coding assistant web app that can analyze a codebase, perform file operations (read/write/replace),
+        search across the workspace, run lint/build checks, and execute controlled shell commands —
+        with real-time streaming responses.
+      </p>
+
+      <ul>
+        <li>Implemented tool-calling workflows for safe file editing and workspace discovery (surgical edits)</li>
+        <li>Built streaming chat UX using <b>Server-Sent Events (SSE)</b> for low-latency responses</li>
+        <li>Added schema validation (<b>Zod</b>) and structured prompts for more reliable agent behavior</li>
+      </ul>
+
+      <div class="tags">
+        <span class="tag">React 19</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Vite</span>
+        <span class="tag">Express 5</span>
+        <span class="tag">LangChain</span>
+        <span class="tag">GPT-4o-mini</span>
+        <span class="tag">SSE</span>
+        <span class="tag">Zod</span>
+      </div>
+
+      <div class="ctaRow">
+        <a class="btn btnPrimary" href="https://github.com/johnyheerashaik/my-app" target="_blank" rel="noopener">
+          View Repo
+        </a>
+      </div>
+    </div>
+
+    <!-- VS Code Extension -->
+    <div class="item">
+      <div class="itemTop">
+        <b>WebBot — VS Code Extension (AI Code Editor)</b>
+        <span class="muted">VS Code • TypeScript • OpenAI</span>
+      </div>
+
+      <p class="sub" style="margin-top:10px">
+        A VS Code extension that brings WebBot’s AI code assistance into the editor workflow for faster coding,
+        refactors, and developer productivity.
+      </p>
+
+      <div class="tags">
+        <span class="tag">VS Code Extension</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">AI Coding</span>
+        <span class="tag">Developer Tooling</span>
+      </div>
+
+      <div class="ctaRow">
+        <a class="btn btnPrimary" href="https://github.com/johnyheerashaik/webbot-vscode-extension" target="_blank" rel="noopener">
+          View Repo
+        </a>
+      </div>
+    </div>
+
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="card col12">
+  <section id="skills" class="card">
     <h2>Skills</h2>
     <ul>
-      <li><b>Mobile:</b> React Native, React, TypeScript, Redux, Redux-Saga, Hooks</li>
-      <li><b>Backend:</b> Java 11/17/21, Spring Boot 2.x/3.x, REST, GraphQL</li>
+      <li><b>Mobile:</b> React Native, React, TypeScript, Redux-Saga, Redux Toolkit, React Navigation, Hooks</li>
+      <li><b>AI/LLM:</b> LangChain, OpenAI (GPT-4o / GPT-4o-mini), Tool Calling, Prompt Engineering, Streaming (SSE)</li>
+      <li><b>Backend:</b> Node.js, Express, Java 11/17/21, Spring Boot 2.x/3.x, REST, GraphQL</li>
       <li><b>Monitoring:</b> Firebase Crashlytics, Performance, Analytics, Quantum Metric</li>
       <li><b>DevOps:</b> Jenkins, Docker, Firebase App Distribution</li>
-      <li><b>Native:</b> Android (Kotlin, Java, XML)</li>
+      <li><b>Native:</b> Android (Kotlin, Java, XML), Native Modules</li>
     </ul>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="card col12">
+  <section id="contact" class="card">
     <h2>Contact</h2>
     <div class="contact">
       <div>
         <p class="sub">
-          Interested in discussing senior React Native or mobile engineering roles.
-          I’m happy to connect.
+          Interested in senior React Native roles and AI-enabled developer tooling. I’m happy to connect.
         </p>
         <p class="muted">
           <b>Email:</b> johnyheera.sk@gmail.com<br/>
@@ -336,9 +405,9 @@
         </p>
       </div>
 
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <div class="ctaRow" style="align-content:flex-start">
         <a class="btn btnPrimary" href="mailto:johnyheera.sk@gmail.com">Email Me</a>
-        <a class="btn" href="https://github.com/johnyheerashaik" target="_blank">GitHub</a>
+        <a class="btn" href="https://github.com/johnyheerashaik" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </section>
