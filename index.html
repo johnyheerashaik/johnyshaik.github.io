@@ -10,14 +10,12 @@
     content="Senior React Native & Backend Developer with 7+ years of experience building enterprise mobile applications for Walmart, GM, and T-Mobile. Builder of MyApp (AI Movie Companion) and WebBot (AI Code Editor + VS Code Extension)."
   />
 
-  <!-- Optional: premium font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* Warm, Claude-like minimal palette (NO BLUE GLOWS) */
       --bg: #f6f4ef;
       --bg2:#f1eee8;
       --card:#ffffff;
@@ -28,8 +26,7 @@
       --border: rgba(20,20,20,.08);
       --border2: rgba(20,20,20,.12);
 
-      /* Accent is neutral (not blue) */
-      --accent: #141414;     /* primary button */
+      --accent: #141414;
       --accentText: #ffffff;
 
       --shadow: 0 10px 28px rgba(20,20,20,.06);
@@ -55,7 +52,6 @@
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width: var(--max); margin: 0 auto; padding: 22px 18px 76px; }
 
-    /* Header / Nav */
     header{
       position: sticky;
       top: 0;
@@ -79,9 +75,9 @@
     .avatar{
       width: 38px; height: 38px;
       border-radius: 14px;
-      background: #e9e5de;         /* NO gradient */
+      background: #e9e5de;
       border: 1px solid var(--border);
-      box-shadow: none;            /* NO glow */
+      box-shadow: none;
     }
     .brand b{ font-size: 13.5px; letter-spacing: .2px; }
     .brand span{ display:block; font-size: 12px; color: var(--muted2); margin-top: 2px; }
@@ -112,7 +108,7 @@
       font-weight: 600;
       font-size: 13px;
       color: var(--text);
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease, filter .12s ease;
     }
     .btn:hover{
       transform: translateY(-1px);
@@ -126,9 +122,22 @@
       border: 1px solid rgba(20,20,20,.18);
       box-shadow: none;
     }
-    .btnPrimary:hover{
+
+    /* FIX: keep primary buttons dark on hover */
+    .btn.btnPrimary:hover{
+      background: var(--accent);
+      color: var(--accentText);
+      border-color: rgba(20,20,20,.22);
       transform: translateY(-1px);
       filter: brightness(.96);
+    }
+
+    .btn:focus-visible{
+      outline: 2px solid rgba(20,20,20,.25);
+      outline-offset: 3px;
+    }
+    .btn.btnPrimary:focus-visible{
+      outline: 2px solid rgba(20,20,20,.35);
     }
 
     /* Layout */
@@ -149,7 +158,6 @@
       box-shadow: var(--shadow);
     }
 
-    /* Hero text */
     .pill{
       display:inline-flex;
       align-items:center;
@@ -165,7 +173,7 @@
     .dot{
       width: 8px; height: 8px;
       border-radius: 50%;
-      background: #2e7d32; /* small green dot only */
+      background: #2e7d32;
       box-shadow: 0 0 0 4px rgba(46,125,50,.10);
     }
 
@@ -217,6 +225,7 @@
       flex-wrap:wrap;
     }
     .itemTop b{ font-size: 14px; }
+
     ul{
       margin: 10px 0 0 18px;
       color: var(--muted);
@@ -233,15 +242,6 @@
       font-size: 12px;
       color: rgba(20,20,20,.72);
     }
-
-    .contact{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 16px;
-      margin-top: 12px;
-      align-items:start;
-    }
-    @media(max-width: 800px){ .contact{ grid-template-columns: 1fr; } }
 
     footer{
       margin-top: 20px;
@@ -268,6 +268,53 @@
     }
     .kpiBox b{ font-size: 13px; }
     .kpiBox div{ margin-top: 4px; font-size: 12px; color: var(--muted2); line-height: 1.55; }
+
+    /* CLEAN CONTACT */
+    .contactHeader{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap: 14px;
+      flex-wrap:wrap;
+    }
+    .contactBtns{ display:flex; gap:10px; flex-wrap:wrap; }
+
+    .contactGrid{
+      margin-top: 14px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media(max-width: 800px){ .contactGrid{ grid-template-columns: 1fr; } }
+
+    .contactCard{
+      border: 1px solid rgba(20,20,20,.08);
+      background: rgba(255,255,255,.85);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .contactLabel{
+      font-size: 12px;
+      color: var(--muted2);
+      margin-bottom: 6px;
+      font-weight: 600;
+      letter-spacing: .2px;
+    }
+    .contactValue{
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    /* Optional: tiny helper line under section titles */
+    .sectionLead{
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 85ch;
+    }
   </style>
 </head>
 
@@ -313,11 +360,12 @@
         <span class="chip">TypeScript</span>
         <span class="chip">Redux-Saga</span>
         <span class="chip">Firebase</span>
-        <span class="chip">LangChain</span>
-        <span class="chip">OpenAI</span>
         <span class="chip">Node/Express</span>
         <span class="chip">Java</span>
         <span class="chip">Spring Boot</span>
+        <span class="chip">Prometheus</span>
+        <span class="chip">Grafana</span>
+        <span class="chip">Loki</span>
       </div>
 
       <div class="ctaRow">
@@ -331,8 +379,8 @@
           <div>Reduced crash rates by ~20% via Crashlytics + performance monitoring.</div>
         </div>
         <div class="kpiBox">
-          <b>Developer Tooling</b>
-          <div>Built WebBot AI Code Editor + VS Code Extension with streaming + tool-calling.</div>
+          <b>Observability</b>
+          <div>Monitored backend services with Prometheus + Grafana; analyzed logs with Grafana Cloud Logs (Loki).</div>
         </div>
       </div>
     </div>
@@ -343,6 +391,8 @@
         <li>Reduced crash rates by <b>~20%</b> using Firebase Crashlytics + Performance monitoring</li>
         <li>Modernized React Native UI by migrating legacy class components to hooks-based components</li>
         <li>Designed unified Axios network layer with interceptors and centralized error handling</li>
+        <li>Monitored backend services using <b>Prometheus + Grafana</b> (latency, error rates, CPU/memory, request throughput) and configured alerts</li>
+        <li>Used <b>Grafana Cloud Logs (Loki)</b> to query and correlate logs with metrics for faster troubleshooting</li>
         <li>Built <b>WebBot</b>: AI Code Editor/Assistant + <b>VS Code Extension</b> using <b>LangChain + OpenAI</b></li>
       </ul>
     </div>
@@ -363,6 +413,9 @@
         <li>Improved app stability by reducing crash rates by <b>~20%</b> across critical user flows</li>
         <li>Optimized network architecture using Axios interceptors for unified error handling, token refresh logic, logging, and API observability</li>
         <li>Managed React Native upgrades, resolving native module conflicts and third-party dependency compatibility issues</li>
+        <li>Monitored backend microservices using <b>Prometheus + Grafana</b> dashboards to track latency, error rates, CPU/memory utilization, and request throughput during cloud deployments</li>
+        <li>Configured <b>alert rules</b> in Grafana for backend service failures and performance degradation</li>
+        <li>Used <b>Grafana Cloud Logs (Loki)</b> to query and correlate logs with metrics for faster production troubleshooting</li>
         <li>Contributed to backend cloud modernization (Azure → Walmart Cloud/OneOps) through validation, configuration alignment, and deployment support</li>
         <li>Supported Java/Spring upgrades by assisting with dependency updates and post-deploy verification</li>
       </ul>
@@ -374,10 +427,15 @@
         <span class="muted">Jan 2020 – Apr 2024</span>
       </div>
       <ul>
-        <li>Developed scalable React Native applications using TypeScript and Redux-Saga for predictable state management</li>
-        <li>Contributed to EV features including Pre-Start Climate Control and remote vehicle monitoring</li>
-        <li>Developed native Android modules (Kotlin/Java) for OBD-II communication and diagnostics</li>
-        <li>Implemented Bluetooth/serial communication layers and integrated Firebase logging + Instabug for diagnostics</li>
+        <li>Built high-performance mobile applications using <b>React Native with TypeScript</b>, leveraging Redux-Saga for centralized state management and scalable feature development.</li>
+<li>Developed and maintained backend services using <b>Node.js (Express)</b> and designed <b>GraphQL APIs</b> to enable optimized, real-time client–server communication.</li>
+<li>Designed reusable UI components and architectural patterns to eliminate redundancy and improve long-term maintainability across the application.</li>
+<li>Implemented feature toggle mechanisms to safely manage feature rollouts across DEV, QA, UAT, and PROD environments.</li>
+<li>Integrated CI/CD pipelines using <b>Jenkins</b> to automate builds, testing, and multi-environment deployments.</li>
+<li>Monitored and debugged applications using <b>React Native Debugger</b>, Redux state inspection, and native profiling tools to ensure smooth feature execution.</li>
+<li>Developed native Android features using <b>Kotlin/XML</b> and integrated frontend UI with backend services for platform-specific workflows.</li>
+<li>Enhanced native iOS functionality using <b>Swift + Xcode</b>, collaborating with React Native modules to enable hybrid, platform-specific capabilities.</li>
+<li>Implemented comprehensive unit testing using <b>Jest (React Native)</b> and <b>Mockito (Android)</b>, reducing regression issues and improving application stability.</li>
       </ul>
     </div>
 
@@ -387,9 +445,15 @@
         <span class="muted">Oct 2018 – Dec 2019</span>
       </div>
       <ul>
-        <li>Built internal dashboards using React, Redux, and REST APIs</li>
-        <li>Converted apps to Single Page Applications (SPA) with React Router for faster navigation</li>
-        <li>Integrated Sentry for error tracking and performance monitoring</li>
+        <li>Developed hybrid applications using React, React Native, and JavaScript to build scalable UI components for internal dashboards and automation tools.</li>
+<li>Designed responsive, utility-first interfaces using Tailwind CSS, ensuring rapid development and visual consistency across mobile and web modules.</li>
+<li>Integrated Sentry for real-time error tracking and performance monitoring, proactively identifying and resolving production bottlenecks.</li>
+<li>Modernized legacy applications into Single Page Applications (SPA) using React Router, improving navigation performance by approximately 40%.</li>
+<li>Implemented predictable state management using Redux, structuring front-end screens for maintainability and scalable feature expansion.</li>
+<li>Consumed and integrated RESTful APIs and JSON data using AJAX within React and React Native layers to enable dynamic, data-driven UI updates.</li>
+<li>Built executive-level reporting dashboards and data visualizations using Power BI, JavaScript, and React to support RF2020 analytics initiatives.</li>
+<li>Developed internal backend support tools using Python (Flask) to deploy dashboards and streamline UI–backend data workflows.</li>
+<li>Collaborated with database teams to optimize SQL Server (SSMS) tables and dynamically populate UI components while maintaining brand consistency using T-Mobile Blue UI components and approved third-party libraries.</li>
       </ul>
     </div>
 
@@ -491,14 +555,14 @@
         <span class="muted">VS Code • TypeScript • Agentic Search • RAG</span>
       </div>
       <p class="sub" style="margin-top:10px">
-        Agentic Search is a real-time research companion that blends live web results with GPT-4/Turbo/3.5 reasoning to deliver cited answers and traceable decision steps for any question you ask.
+        Agentic Search is a real-time research companion that blends live web results with LLM reasoning to deliver cited answers and traceable decision steps.
+        Built with an agent workflow that supports retrieval patterns (RAG) for improved answer grounding.
       </p>
       <div class="tags">
         <span class="tag">VS Code Extension</span>
         <span class="tag">TypeScript</span>
-        <span class="tag">AI Coding</span>
         <span class="tag">Agentic Search</span>
-         <span class="tag">RAG</span>
+        <span class="tag">RAG</span>
       </div>
       <div class="ctaRow">
         <a class="btn btnPrimary" href="https://github.com/johnyheerashaik/agentic-search" target="_blank" rel="noopener">View Repo</a>
@@ -511,9 +575,9 @@
     <h2>Skills</h2>
     <ul>
       <li><b>Mobile:</b> React Native, React, TypeScript, Redux-Saga, Redux Toolkit, React Navigation, Hooks</li>
-      <li><b>AI/LLM:</b> LangChain, OpenAI, Tool Calling, Prompt Engineering, Streaming (SSE)</li>
+      <li><b>AI/LLM:</b> LangChain, OpenAI, Tool Calling, Prompt Engineering, Streaming (SSE), RAG (Agentic Search)</li>
       <li><b>Backend:</b> Node.js, Express, Java 11/17/21, Spring Boot 2.x/3.x, REST, GraphQL</li>
-      <li><b>Monitoring:</b> Firebase Crashlytics, Performance, Analytics, Quantum Metric</li>
+      <li><b>Monitoring / Observability:</b> Firebase Crashlytics, Performance, Analytics, Quantum Metric, Prometheus, Grafana (Dashboards & Alerting), Grafana Cloud Logs (Loki)</li>
       <li><b>DevOps:</b> Jenkins, Docker, Firebase App Distribution</li>
       <li><b>Native:</b> Android (Kotlin, Java, XML), Native Modules</li>
     </ul>
@@ -521,18 +585,38 @@
 
   <!-- CONTACT -->
   <section id="contact" class="card">
-    <h2>Contact</h2>
-    <div class="contact">
+    <div class="contactHeader">
       <div>
-        <p class="sub">
-          Interested in senior React Native roles and AI-enabled developer tooling. I’m happy to connect.
-        </p>
-        <p class="muted">
-          <b>Email:</b> johnyheera.sk@gmail.com<br/>
-          <b>Phone:</b> 512-584-9711
+        <h2>Contact</h2>
+        <p class="sectionLead">
+          Interested in senior React Native roles and AI-enabled developer tooling. Happy to connect.
         </p>
       </div>
+      <div class="contactBtns">
+        <a class="btn btnPrimary" href="mailto:johnyheera.sk@gmail.com">Email</a>
+        <a class="btn" href="https://github.com/johnyheerashaik" target="_blank" rel="noopener">GitHub</a>
+      </div>
     </div>
+
+    <div class="contactGrid" aria-label="Contact details">
+      <div class="contactCard">
+        <div class="contactLabel">Email</div>
+        <div class="contactValue">
+          <a href="mailto:johnyheera.sk@gmail.com">johnyheera.sk@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="contactCard">
+        <div class="contactLabel">Phone</div>
+        <div class="contactValue">
+          <a href="tel:+15125849711">+1 (512) 584-9711</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="muted" style="margin-top:12px">
+      Preferred: email. Available for interviews CST.
+    </p>
   </section>
 
   <footer>
